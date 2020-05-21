@@ -10,7 +10,7 @@ animate();
 
 function init() {
 
-    camera = new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight, 1, 1000);
+    camera = new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight, 1);
     camera.position.z = 400;
 
     scene = new THREE.Scene();
@@ -19,11 +19,11 @@ function init() {
 
     const materials = [
         new THREE.MeshBasicMaterial({ map: loader.load('./porta.jpg') }),
-        new THREE.MeshBasicMaterial({ map: loader.load('./lateral-direita.jpg') }),
-        new THREE.MeshBasicMaterial({ map: loader.load('./lateral-direita.jpg') }),
-        new THREE.MeshBasicMaterial({ map: loader.load('./lateral-direita.jpg') }),
-        new THREE.MeshBasicMaterial({ map: loader.load('./lateral-direita.jpg') }),
         new THREE.MeshBasicMaterial({ map: loader.load('./frente.jpg') }),
+        new THREE.MeshBasicMaterial({ map: loader.load('./lateral-direita.jpg') }),
+        new THREE.MeshBasicMaterial({ map: loader.load('./lateral-direita.jpg') }),
+        new THREE.MeshBasicMaterial({ map: loader.load('./lateral-direita.jpg') }),
+        new THREE.MeshBasicMaterial({ map: loader.load('./lateral-direita.jpg') }),
     ];
 
     geometry = new THREE.BoxBufferGeometry(600, 200, 200);
