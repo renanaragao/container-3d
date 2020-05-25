@@ -5,6 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     entry: {
+        // app: Path.resolve(__dirname, 'clickable-area.js')
         app: Path.resolve(__dirname, 'main.js')
     },
     output: {
