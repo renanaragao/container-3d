@@ -2,7 +2,7 @@ import * as THREE from 'three';
 import OrbitControls from 'three-orbitcontrols';
 import { Interaction } from 'three.interaction';
 
-var camera, scene, renderer, controls, geometry, raycaster, mouse;
+var camera, scene, renderer, controls, geometry, raycaster, mouse, square;
 var mesh;
 
 init();
@@ -30,20 +30,40 @@ function init() {
     var material = new THREE.LineBasicMaterial({ color: 0x0000ff });
 
     var points = [];
-    points.push(new THREE.Vector3(- 10, 0, 0));
-    points.push(new THREE.Vector3(0, 10, 0));
-    points.push(new THREE.Vector3(10, 0, 0));
+    points.push(new THREE.Vector3(-300, -100, 100));
+    points.push(new THREE.Vector3(-300, 100, 100));
+    // points.push(new THREE.Vector3(200, 200, 0));
+    // points.push(new THREE.Vector3(200, 0, 0));
+    // points.push(new THREE.Vector3(0, 0, 0));
+    // points.push(new THREE.Vector3(0, 0, -600));
+    // points.push(new THREE.Vector3(0, 200, -600));
+    // points.push(new THREE.Vector3(0, 200, 0));
+    // points.push(new THREE.Vector3(200, 200, 0));
+    // points.push(new THREE.Vector3(200, 200, -600));
+    // points.push(new THREE.Vector3(0, 200, -600));
+    // points.push(new THREE.Vector3(0, 0, -600));
+    // points.push(new THREE.Vector3(200, 0, -600));
+    // points.push(new THREE.Vector3(200, 200, -600));
+    // points.push(new THREE.Vector3(200, 0, -600));
+    // points.push(new THREE.Vector3(200, 0, 0));
 
-    geometry = new THREE.BoxBufferGeometry(600, 200, 200).setFromPoints(points);
-    geometry.translate(25, 0, 25);
+    //600, 200, 200
+
+    geometry = new THREE.BoxBufferGeometry(600, 200, 200)
+
+    square = new THREE.BufferGeometry().setFromPoints(points);
     raycaster = new THREE.Raycaster();
 
-    var line = new THREE.Line(geometry, material);
+    var line = new THREE.Line(square, material);
     scene.add(line);
-    
-    mesh = new THREE.Mesh(geometry, materials);
+
+    mesh = new THREE.Mesh(geometry, new THREE.MeshPhongMaterial({
+        color: 0xFFFFFF,
+        opacity: 0.5,
+        transparent: true,
+      }));
     scene.add(mesh);
-    
+
     const gridHelper = new THREE.GridHelper(1000, 20);
     scene.add(gridHelper);
     
