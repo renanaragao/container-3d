@@ -33,7 +33,7 @@ function init() {
     points.push(new THREE.Vector3(-300, 0, 100));
     points.push(new THREE.Vector3(-300, 100, 100));
     points.push(new THREE.Vector3(-180, 100, 100));
-    // points.push(new THREE.Vector3(-180, 0, 100));
+    points.push(new THREE.Vector3(-180, 0, 100));
     // points.push(new THREE.Vector3(-300, 0, 100));
 
 
@@ -64,7 +64,7 @@ function init() {
     line.name = 'quadrante-01';
     scene.add(line);
 
-    var planeGeometry = new THREE.PlaneGeometry(120, 120).setFromPoints();
+    var planeGeometry = new THREE.PlaneGeometry(120, 120).setFromPoints(points);
     var planeMaterial = new THREE.MeshBasicMaterial({ color: 0xffff00, side: THREE.DoubleSide });
     var plane = new THREE.Mesh(planeGeometry, planeMaterial);
     plane.name = 'plane-01'
