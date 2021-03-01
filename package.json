@@ -21,7 +21,7 @@
   "homepage": "https://github.com/renanaragao/container-3d#readme",
   "dependencies": {
     "http-server": "^0.12.3",
-    "three": "^0.116.1",
+    "three": "^0.125.0",
     "three-orbitcontrols": "^2.110.3",
     "three-trackballcontrols-ts": "^0.2.1",
     "three.interaction": "^0.2.2"
